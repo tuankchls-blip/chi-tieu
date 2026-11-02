@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0e9f6e">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Chi tiêu">
+  <meta name="format-detection" content="telephone=no">
+  <title>Chi tiêu</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="icons/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1 id="viewTitle">Tổng quan</h1>
+    <div class="month-switch" id="monthSwitch">
+      <button class="icon-btn" data-month="-1" aria-label="Tháng trước">‹</button>
+      <button class="month-label" id="monthLabel" data-action="this-month" aria-label="Về tháng hiện tại"></button>
+      <button class="icon-btn" data-month="1" aria-label="Tháng sau">›</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="view-home" class="view active"></section>
+    <section id="view-history" class="view"></section>
+    <section id="view-reports" class="view"></section>
+    <section id="view-settings" class="view"></section>
+  </main>
+
+  <nav class="tabbar">
+    <button data-view="home" class="active">
+      <svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>
+      Tổng quan
+    </button>
+    <button data-view="history">
+      <svg viewBox="0 0 24 24"><path d="M9 6h12M9 12h12M9 18h12"/><circle cx="4.5" cy="6" r="1"/><circle cx="4.5" cy="12" r="1"/><circle cx="4.5" cy="18" r="1"/></svg>
+      Lịch sử
+    </button>
+    <button class="fab" data-action="add-tx" aria-label="Thêm giao dịch">
+      <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+    </button>
+    <button data-view="reports">
+      <svg viewBox="0 0 24 24"><path d="M21 12A9 9 0 1 1 12 3v9z"/><path d="M15 3.5A9 9 0 0 1 20.5 9H15z"/></svg>
+      Báo cáo
+    </button>
+    <button data-view="settings">
+      <svg viewBox="0 0 24 24"><path d="M4 6h9M17 6h3M4 12h3M11 12h9M4 18h11M19 18h1"/><circle cx="15" cy="6" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="17" cy="18" r="2"/></svg>
+      Cài đặt
+    </button>
+  </nav>
+
+  <div id="sheet" hidden></div>
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
