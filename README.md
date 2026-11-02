@@ -11,8 +11,24 @@ App ghi chép thu chi cá nhân. Cài lên màn hình chính iPhone, dùng đư�
   - Thông báo ngay lúc nhập một khoản chi làm chạm 80% hoặc vượt hạn mức.
   - Gợi ý số tiền nên tiêu mỗi ngày trong phần còn lại của tháng.
 - **Báo cáo:** biểu đồ tròn theo danh mục, biểu đồ cột chi tiêu theo ngày (có đường trung bình), so sánh thu/chi 6 tháng gần nhất.
-- **Danh mục:** thêm, sửa, xoá; đổi biểu tượng và màu. Khi xoá một danh mục, các giao dịch của nó chuyển sang "Khác".
-- **Sao lưu:** xuất file `.json` để sao lưu và khôi phục; xuất `.csv` để mở bằng Excel hoặc Numbers.
+- **Danh mục:** thêm, sửa, xoá; đổi biểu tượng, màu và mức độ quan trọng (Thiết yếu / Quan trọng / Có thể cắt giảm). Khi xoá một danh mục, các giao dịch của nó chuyển sang "Khác". Sắp xếp được theo thứ tự tự đặt, số tiền trong tháng, mức độ quan trọng hoặc số lần dùng.
+- **Phạm vi chi tiêu (bản 2):**
+  - Mỗi khoản chi thuộc một trong 3 phạm vi: **Cá nhân**, **Công việc** hoặc **Tạm ứng – chi hộ**. Khoản thu thuộc Cá nhân hoặc Công việc.
+  - Cá nhân và Công việc có bộ danh mục riêng.
+  - Tổng quan và Báo cáo mặc định chỉ tính Cá nhân, có nút chuyển sang phạm vi khác.
+  - Ngân sách chỉ áp dụng cho chi tiêu Cá nhân.
+- **Đối soát tạm ứng:**
+  - Lịch sử có tab **Chờ hoàn** và **Đã hoàn**.
+  - Khi đánh dấu đã hoàn, tiền về ví được chọn nhưng không tính là thu nhập.
+- **Ví & nguồn tiền:**
+  - Ví thường có số dư (Tài khoản chính, Tiền mặt, Ví MoMo). Ví trả sau theo dõi dư nợ (MoMo Ví trả sau, TikTok PayLater).
+  - **Mua bằng ví trả sau:** tính vào chi tiêu và cộng vào dư nợ.
+  - **Trả nợ:** dùng **Chuyển ví**. Ví nguồn bị trừ, dư nợ giảm, không tính thêm vào chi tiêu.
+  - Tổng quan hiện **Khả dụng thực** = Tài khoản chính − tổng dư nợ trả sau.
+- **Sao lưu & xuất:**
+  - Xuất file `.json` để sao lưu và khôi phục. File sao lưu của bản 1 vẫn khôi phục được.
+  - Xuất `.csv` (UTF-8 có BOM) để mở bằng Excel hoặc Numbers.
+  - Nút **Sao chép cho Google Sheets** sao chép dữ liệu dạng bảng, chỉ cần dán vào ô A1.
 - Tự đổi theo chế độ Sáng/Tối của iPhone.
 
 ## Cấu trúc

@@ -1,7 +1,7 @@
 // Service worker: lưu sẵn giao diện app để mở được khi không có mạng.
 // Chiến lược stale-while-revalidate: trả bản đã lưu ngay, đồng thời tải bản mới
 // về cho lần mở sau. Đổi CACHE khi muốn ép xoá bộ nhớ đệm cũ.
-const CACHE = 'chitieu-v1';
+const CACHE = 'chitieu-v2';
 const ASSETS = [
   './',
   './index.html',
@@ -15,7 +15,10 @@ const ASSETS = [
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE).then((cache) => cache.addAll(ASSETS)).then(() => self.skipWaiting())
+    // cache: 'reload' để không lấy nhầm bản cũ trong bộ nhớ đệm HTTP của trình duyệt
+    caches.open(CACHE)
+      .then((cache) => cache.addAll(ASSETS.map((url) => new Request(url, { cache: 'reload' }))))
+      .then(() => self.skipWaiting())
   );
 });
 
